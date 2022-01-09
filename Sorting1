@@ -1,0 +1,9 @@
+def bubbleSort(lis,lenData): 
+    for i in range(lenData-1): 
+        for j in range(lenData-i-1): 
+            if lis[j] > lis[j+1] : 
+                lis[j], lis[j+1] = lis[j+1], lis[j]               
+    return lis
+
+Data = [int(i) for i in input('Enter Input : ').split()]
+print(bubbleSort(Data,len(Data)))
