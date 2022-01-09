@@ -1,0 +1,48 @@
+if __name__=='__main__' :
+    n=int(input("Enter Input : "))
+    #part 1
+    for i in range(n+1) :
+        print(".",end='')
+    print("#",end='')
+    for i in range(n+2) :
+        print("+",end='')
+    print("")
+    #part 2
+    temp = n
+    for j in range(n) :
+        for i in range(temp) :
+            print(".",end='')
+        for i in range(j+2):
+            print("#",end='')
+        print("+",end='')
+        for i in range(n):
+            print("#",end='')
+        print("+")
+        temp=temp-1
+    #part 3
+    for j in range (2):
+        for i in range(n+2):
+            print("#",end='')
+        for i in range(n+2):
+            print("+",end='')
+        print("")
+    #part 4
+    
+    temp = n
+    for j in range(n) :
+        print("#",end='')
+        for i in range(n):
+            print("+",end='')
+        print("#",end='')
+        for i in range(temp+1):
+            print("+",end='')
+        for i in range(j+1) :
+            print(".",end='')
+        print("")
+        temp=temp-1
+    #part 5
+    for i in range(n+2):
+        print("#",end='')
+    print("+",end='')
+    for i in range(n+1):
+        print(".",end='')
