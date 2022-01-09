@@ -1,0 +1,45 @@
+class Stack():
+
+    def __init__(self):
+        self.list = []
+
+    def push(self,item):
+        self.list.append(item)
+
+    def pop(self):
+        if len(self.list) > 0:
+            return self.list.pop()
+        else:
+            print("list is empty")
+
+    def isEmpty(self):
+        return len(self.list) == 0
+
+    def size(self):
+        return len(self.list)
+
+def postFixeval():
+    print(" ***Postfix expression calcuation***")
+    token = input("Enter Postfix expression : ").split()
+    s = Stack()
+
+    for i in token:
+        if i in ('+','-','*','/'):
+            op1,op2 = s.pop(),s.pop()
+            if i == '+':
+                s.push(op2+op1)
+            elif i == '-':
+                s.push(op2-op1)
+            elif i == '*':
+                s.push(op2*op1)
+            elif i == '/':
+                s.push(op2/op1)
+        else:
+            s.push(int(i))
+
+    if not s.isEmpty():
+        print("Answer : ",'{:.2f}'.format(s.pop()))
+    else:
+        print("list is empty")
+
+postFixeval()
