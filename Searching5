@@ -1,0 +1,24 @@
+def minimumWeight(lst, box):
+    if box == 1:    # base case
+        return sum(lst)
+
+    minWeight = 99999  
+    for index in range(len(lst)):   
+
+        if len(lst[index:]) < box-1:   
+            break
+
+        leftValue = sum(lst[:index])   
+        rightValue = minimumWeight(lst[index:], box - 1)  
+
+        minWeight = min(max(leftValue, rightValue), minWeight)  
+
+    return minWeight
+
+
+weightlst, k = input('Enter Input : ').split('/')
+k = int(k)
+weightlst = [int(i) for i in weightlst.split()]
+
+ans = minimumWeight(weightlst, k)
+print(f'Minimum weigth for {k} box(es) = {ans}')
