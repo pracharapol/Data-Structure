@@ -1,23 +1,28 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31605.320
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BasicPython_1", "BasicPython_1\BasicPython_1.pyproj", "{925B37BA-D7DF-4A9C-8469-BDD579A768AC}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{925B37BA-D7DF-4A9C-8469-BDD579A768AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{925B37BA-D7DF-4A9C-8469-BDD579A768AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DCE7A44E-CA70-4B25-826F-B34F713FFA9D}
-	EndGlobalSection
-EndGlobal
+if __name__ == '__main__':
+	print("*** Converting hh.mm.ss to seconds ***")
+	h,m,s=input("Enter hh mm ss : ").split()
+	h=int(h)
+	m=int(m)
+	s=int(s)
+	if h>=0 and h<=60:	
+		if m>=0 and m<60:		
+			if s>=0 and s<60:
+				if h<10:
+					h=("0"+str(h))
+				if m<10:
+					m=("0"+str(m))
+				if s<10:
+					s=("0"+str(s))
+				a1=int(h)
+				a=a1*3600
+				b1=int(m)
+				b=b1*60
+				c=int(s)
+				output=a+b+c
+				print(str(h)+":"+str(m)+":"+str(s)+" = "+str(f'{output:,}')+" seconds")
+	if h<0 or h>60:
+		print("hh("+str(h)+") is invalid!")
+	elif m<0 or m>=60:
+		print("mm("+str(m)+") is invalid!")						
+	elif s<0 or s>=60:
+		print("ss("+str(s)+") is invalid!")	
