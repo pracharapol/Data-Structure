@@ -1,0 +1,23 @@
+if __name__ == '__main__':
+    print("*** Fun with Drawing ***")
+    n=int(input("Enter input : "))
+    inverse=bool(0)
+    tri=int(1)
+    for j in range((n-1)*4+1):
+        for i in range ((n-1)*4+1):
+            if i<tri or (n-1)*4+1-i<tri:
+                if i%2==0:
+                    print("#",end='')
+                else : 
+                    print(".",end='')
+            elif j%2==0:
+                print("#",end='')
+            else:
+                print(".",end='')
+        print("")
+        if inverse==0:
+            tri=tri+1
+        else:
+            tri=tri-1
+        if tri==n*2-1:
+            inverse=1
