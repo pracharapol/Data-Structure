@@ -1,0 +1,12 @@
+def rec_max(lst, acc_max=-99999999):
+    if len(lst) == 0:
+        return acc_max
+    else:
+        num = lst.pop()
+        if acc_max < num:
+            acc_max = num
+        return rec_max(lst, acc_max)
+
+if __name__ == '__main__':
+    lst = list(map(int, input("Enter Input : ").split()))
+    print(f'Max : {rec_max(lst)}')
