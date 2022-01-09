@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+	print("*** multiplication or sum ***")
+	num1,num2=input("Enter num1 num2 : ").split()
+	num1=int(num1)
+	num2=int(num2)
+	ans=num1*num2
+	if ans>1000:
+		output=num1+num2
+		print("The result is "+str(output))
+	elif ans<=1000:
+		output=num1*num2
+		print("The result is "+str(output))
